@@ -1,0 +1,16 @@
+<!--pages/mymovie/mymovie.wxml-->
+
+
+<!-- 我喜欢的电影 -->
+<view>
+  <view class="myLike">我喜欢的电影</view>
+    <view class="collect">
+      <view class="collect-for" wx:for="{{list}}" wx:key="index">
+        <view class="collect-item">
+          <image class="collectImg" bindtap="skip" data-id="{{item.id}}" src="{{item.img}}"></image>
+          <text class="collectTitle">{{item.title}}</text>
+        </view> 
+      </view>
+    </view>
+</view>
+

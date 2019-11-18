@@ -1,0 +1,10 @@
+<view class='profile'>
+  <view class="profile-img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="profile-name"></open-data>
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+<button bindtap="gotoMap">地图</button>
+<button bindtap="gotoSystemInfo">系统信息</button>
+<button bindtap="gotoLove"  class="movie-comment">喜欢的电影</button>

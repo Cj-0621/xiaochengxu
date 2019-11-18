@@ -1,0 +1,25 @@
+<!-- 搜索框 -->
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" >
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+<!-- 电影列表 -->
+<view class="movie" wx:for="{{movieList}}" wx:key="{{index}}">
+  <image class="movie-img" src="{{item.images.small}}"></image>
+  <view class="movie-info">
+    <view class="movie-title">{{item.title}}</view>
+    <view>观众评分：
+      <text class="movie-score"> {{item.rating.average}}分</text>
+    </view>
+    <view>主演：
+      <text wx:key="{{index}}" wx:for="{{item.casts}}">{{item.name}} </text>
+    </view>
+    <view>年份: {{item.year}}</view>
+  </view>
+  <view>
+  <button bindtap="gotoComment" data-movieid="{{item.id}}" class="movie-comment">评价</button>
+  <view class="like-container">
+    <image src="../../images/shoucang.png" class="btn-like" bindtap="joinLike" data-title="{{item.title}}" data-img="{{item.images.small}}" data-id="{{item.id}}"></image>
+  </view>
+  <button bindtap="gotoBuy"  class="movie-comment">购买</button>
+</view>
+</view>
